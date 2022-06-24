@@ -19,3 +19,11 @@
 *.exe
 *.out
 *.app
+
+# IDE
+.idea
+node_modules
+
+# svg-build-tool
+dist/*.js
+icons/*.svg
