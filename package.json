@@ -1,0 +1,23 @@
+{
+  "name": "svg-build-tool",
+  "version": "1.0.0",
+  "description": "构建SVG Sprites工具",
+  "main": "index.js",
+  "keywords": ["svg", "svg-build-tool", "svg-sprite", "svg-sprite-loader", "svgo-loader", "svgo", "webpack"],
+  "repository": "https://github.com/gaoyaoman/svg-sprite-builder",
+  "author": "Gavin <songjiahui@bimstacks.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "webpack build"
+  },
+  "devDependencies": {
+    "svg-sprite-loader": "^6.0.11",
+    "svgo-loader": "^3.0.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "uglifyjs-webpack-plugin": "^2.2.0"
+  }
+}
