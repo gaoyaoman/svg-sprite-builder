@@ -3,7 +3,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   mode: 'production',
-  entry: './index.js',
+  entry: './build/entry.js',
   output: {
     path: __dirname + '/dist',
     filename: 'icon.[hash:6].js',

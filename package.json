@@ -1,15 +1,27 @@
 {
   "name": "svg-build-tool",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "description": "构建SVG Sprites工具",
-  "keywords": ["svg", "svg sprite", "icon"],
-  "main": "index.js",
-  "repository": "http://songjiahui@47.110.15.13:8011/r/alpha/projects/public/BuildingTools.git",
+  "keywords": [
+    "svg",
+    "svg sprite",
+    "icon"
+  ],
+  "main": "entry.js",
+  "repository": "http://47.110.15.13:8011/summary/alpha%2Fprojects%2Fpublic%2FBuildingTools.git",
   "author": "Gavin <songjiahui@bimstacks.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "webpack build"
+    "cz": "git add . && git status && git cz",
+    "build": "node ./build/build.js",
+    "release:major": "release-it --ci -- major",
+    "release:minor": "release-it --ci -- minor",
+    "release:patch": "release-it --ci -- patch",
+    "release:alpha": "release-it --preRelease=alpha --ci -- major",
+    "release:beta": "release-it --preRelease=beta --ci",
+    "release:rc": "release-it --preRelease=rc --ci",
+    "release:pre-update": "release-it --preRelease --ci"
   },
   "devDependencies": {
     "svg-sprite-loader": "^6.0.11",
@@ -18,6 +30,16 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "@release-it/conventional-changelog": "^5.0.0",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.9.1",
+    "release-it": "^15.2.0",
     "uglifyjs-webpack-plugin": "^2.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   }
 }

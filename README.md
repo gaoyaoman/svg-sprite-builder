@@ -27,7 +27,7 @@
 |-- demo.html 			// demo
 |-- dist 				// 构建输出文件目录				
 |-- icons				// 待构建的svg文件目录
-|-- index.js			// 构建入口
+|-- entry.js			// 构建入口
 |-- node_modules		
 |-- package.json		
 |-- webpack.config.js	
