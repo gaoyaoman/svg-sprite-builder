@@ -25,5 +25,5 @@
 node_modules
 
 # svg-build-tool
-dist/*.js
-icons/*.svg
+# dist/*.js
+# icons/*.svg
