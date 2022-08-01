@@ -1,6 +1,6 @@
 {
   "name": "svg-build-tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "构建SVG Sprites工具",
   "keywords": [
     "svg",
