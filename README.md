@@ -23,15 +23,23 @@
 
 ```bash
 .
-|-- README.md 			
-|-- demo.html 			// demo
-|-- dist 				// 构建输出文件目录				
-|-- icons				// 待构建的svg文件目录
-|-- entry.js			// 构建入口
-|-- node_modules		
-|-- package.json		
-|-- webpack.config.js	
-`-- yarn.lock			
+|-- CHANGELOG.md
+|-- README.md 
+|-- build
+|   |-- build.js
+|   `-- entry.single.js
+|-- demo.html
+|-- dist
+|   `-- icon.single.d2905b.js
+|-- icons
+|   `-- single
+|       |-- icon-add-circle.svg
+|       |-- ...
+|       `-- icon-wisdom-site.svg
+|-- package.json
+|-- webpack.config.js
+`-- yarn.lock
+		
 
 ```
 
@@ -45,7 +53,7 @@
 
    
 
-2. 将需要转化的svg文件放在`icons`文件夹下
+2. 将需要转化的svg文件放在`icons`文件夹下，单色图标放在`single`下
 
 3. 运行构建
 
@@ -58,7 +66,7 @@
    ```bash
    .
    |-- icons
-      `-- icon.d09c78.js
+      `-- icon.single.d2905b.js
    ```
 
    
@@ -66,9 +74,9 @@
 5. 在开发项目中引入生成的SVG Sprite文件，通过svg:use使用，具体参考`demo.html`
 
    ```html
-   <script src="icon.d09c78.js"></script>
+   <script src="icon.single.d2905b.js"></script>
    
-   // 参数name，是对应svg文件的文件名
+   // 参数name，是对应的图标名称
    <svg class="icon">
        <use xlink:href="#icon-{name}" />
    </svg>

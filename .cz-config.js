@@ -21,7 +21,7 @@ module.exports = {
   scopes: [
     { name: '构建' },
     { name: '依赖' },
-    { name: '代码' },
+    { name: '图标' },
   ],
 
   // it needs to match the value for field type. Eg.: 'fix'

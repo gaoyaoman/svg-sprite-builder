@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>平台通用图标库</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <span class="container__title">单色图标</span>
+        <div id="single-icons" class="container__body"></div>
+      </div>
+      <div class="container">
+        <span class="container__title">彩色图标</span>
+        <div id="color-icons" class="container__body"></div>
+      </div>
+    </div>
+    <script>
+      const loadSvg = function (container, name, className = 'icon__item') {
+        document.getElementById(container).innerHTML += `
+          <div class="icon icon--size">
+            <svg class="${className}"><use xlink:href="#${name}" /></svg>
+            <span class="icon__text">${name}</span>
+          </div>
+        `
+      }
+
+      const iconSingleList = []
+      const iconColorfulList = []
+
+      for (const name of iconSingleList.values()) {
+        loadSvg('single-icons', name.split('.svg')[0])
+      }
+
+      for (const name of iconColorfulList.values()) {
+        loadSvg('color-icons',name.split('.svg')[0], 'icon__item--color')
+      }
+    </script>
+  </body>
+</html>

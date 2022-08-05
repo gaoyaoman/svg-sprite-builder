@@ -13,8 +13,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "preinstall": "node ./scripts/preinstall.js",
+    "precz": "node ./scripts/precz.js",
     "cz": "git add . && git status && git cz",
-    "build": "node ./build/build.js",
+    "prebuild": "node ./scripts/prebuild.js",
+    "build": "webpack build",
     "release:major": "release-it --ci -- major",
     "release:minor": "release-it --ci -- minor",
     "release:patch": "release-it --ci -- patch",
@@ -26,16 +29,17 @@
   "devDependencies": {
     "svg-sprite-loader": "^6.0.11",
     "svgo-loader": "^3.0.1",
+    "terser-webpack-plugin": "^5.3.3",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
     "@release-it/conventional-changelog": "^5.0.0",
+    "clean-webpack-plugin": "^4.0.0",
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",
     "cz-customizable": "^6.9.1",
-    "release-it": "^15.2.0",
-    "uglifyjs-webpack-plugin": "^2.2.0"
+    "release-it": "^15.2.0"
   },
   "config": {
     "commitizen": {

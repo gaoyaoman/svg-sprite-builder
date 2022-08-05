@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Microsoft YaHei UI, Microsoft YaHei UI-Regular, sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+}
+
+.container::after {
+  clear: both;
+}
+
+.container__title {
+  display: block;
+  font-weight: 700;
+  text-align: center;
+  margin: 1em auto;
+  font-size: 30px;
+  font-family: Microsoft YaHei, Microsoft YaHei-Bold, sans-serif;
+  color: #000000;
+  line-height: 36px;
+}
+
+.container__body {
+  position: relative;
+  border-top: 1px solid #DCDCDC;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 1px solid #DCDCDC;
+  margin-left: -1px;
+}
+
+.container__body::after {
+  clear: both;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 0;
+  border-right: 1px solid #DCDCDC;
+  border-bottom: 1px solid #DCDCDC;
+  border-left: 0;
+  background: #F5F5F5;
+  float: left;
+  padding: 1.5em 1em;
+}
+
+.icon__item {
+  width: 32px;
+  height: 32px;
+  fill: rgba(0, 0, 0, 0.65);
+}
+
+.icon__item--color {
+  width: 32px;
+  height: 32px;
+}
+
+.icon__text {
+  font-weight: 400;
+  margin-top: 0.5em;
+  text-align: center;
+  height: 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  font-family: Microsoft YaHei, Microsoft YaHei-Regular, sans-serif;
+  color: #000000;
+  line-height: 16px;
+}
+
+@media only screen and (max-width: 418px) {
+  .icon--size {
+    width: calc(100% - 2px - 2em);
+  }
+}
+
+@media only screen and (min-width: 419px) {
+  .icon--size {
+    width: calc(100% / 2 - 1px - 2em);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .icon--size {
+    width: calc(100% / 3 - 1px - 2em);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .icon--size {
+    width: calc(100% / 4 - 1px - 2em);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .icon--size {
+    width: calc(100% / 6 - 1px - 2em);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .icon--size {
+    width: calc(100% / 8 - 1px - 2em);
+  }
+}
