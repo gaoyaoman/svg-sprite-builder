@@ -1,12 +1,13 @@
 const path = require('path')
 const TerserPlugin = require("terser-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
   mode: 'production',
   entry: {
     single: './build/entry.single.js',
     color: './build/entry.color.js',
+    special: './build/entry.special.js',
   },
   output: {
     path: __dirname + '/dist',
@@ -21,7 +22,10 @@ module.exports = {
     rules: [
       {
         test: /\.svg$/,
-        exclude: path.join(__dirname, 'icons/color'),
+        exclude: [
+          path.join(__dirname, 'icons/color'),
+          path.join(__dirname, 'icons/special'),
+        ],
         use: [
           {
             loader: 'svg-sprite-loader',
@@ -50,7 +54,10 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        exclude: path.join(__dirname, 'icons/single'),
+        exclude: [
+          path.join(__dirname, 'icons/single'),
+          path.join(__dirname, 'icons/special'),
+        ],
         use: [
           {
             loader: 'svg-sprite-loader',
@@ -67,6 +74,21 @@ module.exports = {
                 'convertStyleToAttrs',
                 'removeStyleElement'
               ],
+            }
+          }
+        ]
+      },
+      {
+        test: /\.svg$/,
+        exclude: [
+          path.join(__dirname, 'icons/single'),
+          path.join(__dirname, 'icons/color'),
+        ],
+        use: [
+          {
+            loader: 'svg-sprite-loader',
+            options: {
+              symbolId: '[name]'
             }
           }
         ]

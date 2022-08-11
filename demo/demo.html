@@ -16,6 +16,10 @@
         <span class="container__title">彩色图标</span>
         <div id="color-icons" class="container__body"></div>
       </div>
+      <div class="container">
+        <span class="container__title">特殊图标</span>
+        <div id="special-icons" class="container__body"></div>
+      </div>
     </div>
     <script>
       const loadSvg = function (container, name, className = 'icon__item') {
@@ -29,6 +33,7 @@
 
       const iconSingleList = []
       const iconColorfulList = []
+      const iconSpecialList = []
 
       for (const name of iconSingleList.values()) {
         loadSvg('single-icons', name.split('.svg')[0])
@@ -36,6 +41,10 @@
 
       for (const name of iconColorfulList.values()) {
         loadSvg('color-icons',name.split('.svg')[0], 'icon__item--color')
+      }
+
+      for (const name of iconSpecialList.values()) {
+        loadSvg('special-icons',name.split('.svg')[0], 'icon__item--color')
       }
     </script>
   </body>
